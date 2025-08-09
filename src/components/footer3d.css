@@ -1,0 +1,47 @@
+.social-3d {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  color: white;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-30deg) skew(25deg);
+  transition: all 0.3s ease;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.social-3d::before,
+.social-3d::after {
+  content: "";
+  position: absolute;
+  background: #121212;
+  transition: all 0.3s ease;
+}
+
+.social-3d::before {
+  width: 100%;
+  height: 10px;
+  bottom: -10px;
+  left: 0;
+  transform: skewX(-45deg);
+}
+
+.social-3d::after {
+  height: 100%;
+  width: 10px;
+  top: 0;
+  right: -10px;
+  transform: skewY(-45deg);
+}
+
+.social-3d:hover {
+  transform: rotate(-30deg) skew(25deg) translate(6px, -6px);
+  box-shadow: -12px 12px 25px rgba(168, 85, 247, 0.6);
+  background: linear-gradient(135deg, #9333ea, #a855f7);
+  color: white;
+}

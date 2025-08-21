@@ -48,16 +48,27 @@ function About() {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
           >
-            {/* Location */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center gap-2 mb-6 text-purple-300"
-            >
-              <IoLocationOutline className="text-xl" />
-              <p className="text-lg font-semibold text-white">Based in</p>
-              <p className="text-lg font-semibold text-purple-400">
-                Chandrapur, Maharashtra, India
-              </p>
+            {/* 📍 Location */}
+            <motion.div variants={itemVariants} className="mb-6 text-purple-300">
+              {/* 👉 Mobile view (stacked) */}
+              <div className="flex items-start gap-2 md:hidden">
+                <IoLocationOutline className="text-xl mt-1" />
+                <div>
+                  <p className="text-lg font-semibold text-white">Based in</p>
+                  <p className="text-lg font-semibold text-purple-400">
+                    Chandrapur, Maharashtra, India
+                  </p>
+                </div>
+              </div>
+
+              {/* 👉 Desktop view (inline) */}
+              <div className="hidden md:flex items-center gap-2">
+                <IoLocationOutline className="text-xl" />
+                <p className="text-lg font-semibold text-white">Based in</p>
+                <p className="text-lg font-semibold text-purple-400">
+                  Chandrapur, Maharashtra, India
+                </p>
+              </div>
             </motion.div>
 
             {/* Paragraphs */}
@@ -79,10 +90,10 @@ function About() {
               horizons while making meaningful contributions to impactful projects.
             </motion.p>
 
-            {/* Skill Tags */}
+            {/* ✅ Fixed Skill Tags */}
             <motion.div
               variants={itemVariants}
-              className="md:space-x-4 text-center gap-3 font-semibold text-purple-400 mb-8"
+              className="flex flex-wrap justify-center gap-3 font-semibold text-purple-400 mb-8"
             >
               <span className="bg-white/10 px-3 py-2 rounded-full border border-purple-500">
                 Problem Solving
@@ -97,18 +108,13 @@ function About() {
 
             {/* Button */}
             <motion.div variants={itemVariants} className="text-center">
-              
-
-
-<div className="text-center">
-  <Link to="/about">
-    <button className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold transition-colors">
-      Know More
-    </button>
-  </Link>
-</div>
-
-
+              <div className="text-center">
+                <Link to="/about">
+                  <button className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold transition-colors">
+                    Know More
+                  </button>
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>

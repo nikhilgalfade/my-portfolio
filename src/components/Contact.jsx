@@ -1,4 +1,32 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
+  const form = useRef();
+  const [status, setStatus] = useState(""); // for success/error message
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_bxb5mj8",      // ✅ Your Service ID
+        "template_jd8p7yb",     // ✅ Your Template ID
+        form.current,           // ✅ This refers to your form
+        "35A-F2_YqOA0OyQsq"     // ✅ Your Public Key
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          form.current.reset(); // clear form
+        },
+        (error) => {
+          setStatus("❌ Failed to send message. Try again!");
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
@@ -19,22 +47,28 @@ function Contact() {
 
       {/* ✉️ Contact Card */}
       <div className="relative z-10 max-w-3xl mx-auto bg-black/70 border border-purple-600/30 backdrop-blur-md p-10 rounded-3xl shadow-xl">
-        <form className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <input
               type="text"
+              name="user_name"
               placeholder="Your Name"
+              required
               className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="email"
+              name="user_email"
               placeholder="Your Email"
+              required
               className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
           <textarea
             rows="5"
+            name="message"
             placeholder="Your Message"
+            required
             className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
           ></textarea>
           <div className="text-center">
@@ -46,6 +80,11 @@ function Contact() {
             </button>
           </div>
         </form>
+
+        {/* ✅ Status Message */}
+        {status && (
+          <p className="text-center mt-4 text-sm text-purple-400">{status}</p>
+        )}
       </div>
 
       {/* 🔮 Glow Behind the Card */}

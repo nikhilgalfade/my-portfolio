@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import "./Hero.css"; // Make sure your CSS is in this file or imported
 
 // Animation Variants
 const containerVariants = {
@@ -97,15 +98,34 @@ function Hero() {
           </a>
         </motion.div>
 
-        {/* Button */}
+        {/* View My Work Button */}
         <motion.div
           variants={itemVariants}
           className="mt-6 flex gap-4 justify-center"
         >
-          <button className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold">
+          <button
+            className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold"
+          >
             View My Work
           </button>
         </motion.div>
+
+        {/* Scroll Button */}
+        <motion.div
+          variants={itemVariants}
+          className="hero-buttons"
+        >
+          <button
+            className="btn"
+            onClick={() => {
+              const element = document.getElementById("projects"); // target section
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <div className="scroll"></div>
+          </button>
+        </motion.div>
+
       </motion.div>
     </div>
   );

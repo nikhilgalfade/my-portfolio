@@ -73,7 +73,7 @@ function Hero() {
           className="mt-6 flex gap-6 text-3xl text-white justify-center"
         >
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/nikhilgalfade"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-400 transition-colors"
@@ -81,7 +81,7 @@ function Hero() {
             <FaGithub />
           </a>
           <a
-            href="https://leetcode.com/your-leetcode-id"
+            href="https://leetcode.com/u/nikhil__galfade/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-400 transition-colors"
@@ -111,20 +111,21 @@ function Hero() {
         </motion.div>
 
         {/* Scroll Button */}
-        <motion.div
-          variants={itemVariants}
-          className="hero-buttons"
-        >
-          <button
-            className="btn"
-            onClick={() => {
-              const element = document.getElementById("projects"); // target section
-              element.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            <div className="scroll"></div>
-          </button>
-        </motion.div>
+       <motion.div
+  variants={itemVariants}
+  className="hero-buttons mt-20 flex justify-center"
+>
+  <button
+    className="btn"
+    onClick={() => {
+      const element = document.getElementById("projects");
+      element.scrollIntoView({ behavior: "smooth" });
+    }}
+  >
+    <div className="scroll"></div> {/* ONLY the bouncing dot */}
+  </button>
+</motion.div>
+
 
       </motion.div>
     </div>

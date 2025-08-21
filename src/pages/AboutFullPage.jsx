@@ -56,6 +56,15 @@ function AboutFullPage() {
     };
   }, []);
 
+  const skillsData = [
+    { name: "JavaScript", logo: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", progress: jsSkill },
+    { name: "Java", logo: "https://cdn-icons-png.flaticon.com/512/226/226777.png", progress: javaSkill },
+    { name: "React.js", logo: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", progress: reactSkill },
+    { name: "Tailwind CSS", logo: "https://cdn-icons-png.flaticon.com/512/732/732190.png", progress: tailwindSkill },
+    { name: "PostgreSQL", logo: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png", progress: postgresSkill },
+    { name: "Git & GitHub", logo: "https://cdn-icons-png.flaticon.com/512/733/733553.png", progress: gitSkill },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-black via-[#140e23] to-[#1c012b] text-white">
       <Navbar />
@@ -77,6 +86,7 @@ function AboutFullPage() {
             Me
           </span>
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -148,32 +158,8 @@ function AboutFullPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 px-4 py-12 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
-              {[{
-                name: "JavaScript",
-                logo: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-                progress: jsSkill,
-              }, {
-                name: "Java",
-                logo: "https://cdn-icons-png.flaticon.com/512/226/226777.png",
-                progress: javaSkill,
-              }, {
-                name: "React.js",
-                logo: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
-                progress: reactSkill,
-              }, {
-                name: "Tailwind CSS",
-                logo: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
-                progress: tailwindSkill,
-              }, {
-                name: "PostgreSQL",
-                logo: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png",
-                progress: postgresSkill,
-              }, {
-                name: "Git & GitHub",
-                logo: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
-                progress: gitSkill,
-              }].map((skill, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-12 place-items-center">
+              {skillsData.map((skill, i) => (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -181,7 +167,7 @@ function AboutFullPage() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   id={`skill-${i}`}
                   key={i}
-                  className="bg-gradient-to-br from-[#2d1a40] to-[#1f0f2b] h-56 w-56 border border-purple-700 shadow-lg hover:shadow-purple-600/40 rounded-xl p-4 flex flex-col items-center justify-between transition-transform hover:scale-105 duration-300 ease-in-out"
+                  className="bg-gradient-to-br from-[#2d1a40] to-[#1f0f2b] h-56 w-full max-w-xs border border-purple-700 shadow-lg hover:shadow-purple-600/40 rounded-xl p-4 flex flex-col items-center justify-between transition-transform hover:scale-105 duration-300 ease-in-out"
                 >
                   <img src={skill.logo} alt={skill.name} className="h-12 w-12 mt-2 animate-pulse" />
                   <h3 className="text-white text-lg font-bold mt-3 tracking-wide">{skill.name}</h3>

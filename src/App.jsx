@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AboutFullPage from "./pages/AboutFullPage";
 
+
 function App() {
   return (
     <Router>

@@ -7,7 +7,10 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
-    if (location.pathname === "/") {
+    if (id === "Home") {
+      // Scroll to very top for Home
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (location.pathname === "/") {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -27,6 +30,12 @@ function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">
+        <button
+          onClick={() => scrollToSection("Home")}
+          className="hover:text-purple-400 transition-colors font-semibold"
+        >
+          Home
+        </button>
         <button
           onClick={() => scrollToSection("about")}
           className="hover:text-purple-400 transition-colors font-semibold"

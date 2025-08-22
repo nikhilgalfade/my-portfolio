@@ -2,6 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import "./About.css";
 
 // Animation variants
 const containerVariants = {
@@ -110,9 +111,12 @@ function About() {
             <motion.div variants={itemVariants} className="text-center">
               <div className="text-center">
                 <Link to="/about">
-                  <button className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold transition-colors">
-                    Know More
-                  </button>
+                   <button
+      onClick={() => setShowAll(true)}
+      className="show-more-btn"
+    >
+      Know More 
+    </button>
                 </Link>
               </div>
             </motion.div>

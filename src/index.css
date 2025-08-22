@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden; /* this will hide side scrollbar */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

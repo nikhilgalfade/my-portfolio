@@ -103,7 +103,7 @@ function Hero() {
           variants={itemVariants}
           className="mt-6 flex gap-4 justify-center"
         >
-          <button
+          <button 
             className="bg-purple-500 hover:bg-purple-700 px-6 py-2 rounded-full font-semibold"
           >
             View My Work

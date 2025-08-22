@@ -1,0 +1,57 @@
+/* Show More Projects Button */
+.show-more-btn {
+  width: 11em;
+  height: 3.2em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid #a855f7;   /* 💜 Purple border */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5); /* purple glow */
+  transition: all 0.3s ease;
+}
+
+/* Gradient background effect */
+.show-more-btn::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(168, 85, 247, 0.8),   /* light purple */
+    rgba(126, 34, 206, 0.8)    /* dark purple */
+  );
+  transition: width 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.show-more-btn:hover::before {
+  width: 100%;
+}
+
+/* Arrow effect */
+.show-more-btn::after {
+  content: "➜"; /* arrow symbol */
+  position: absolute;
+  right: 20px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.show-more-btn:hover::after {
+  opacity: 1;
+  transform: translateX(0); /* slide in */
+}

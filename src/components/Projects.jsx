@@ -33,7 +33,7 @@ function Projects() {
       title: "Job Portal Web App",
       description: "Built with React, Spring Boot, and PostgreSQL. A complete job platform.",
       tech: ["React", "Spring Boot", "PostgreSQL"],
-      image: "/images/job-portal.png",
+      image: "/images/Job Portal Web App.png",
       year: "2024",
       link: "#",
       source: "#",

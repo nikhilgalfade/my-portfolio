@@ -32,7 +32,7 @@ function Hero() {
         {/* Greeting */}
         <motion.h2
           variants={itemVariants}
-          className="text-3xl text-purple-400 font-semibold mb-4"
+          className="text-2xl text-purple-400 font-semibold mb-4"
         >
           Hello, I'm
         </motion.h2>
@@ -40,9 +40,9 @@ function Hero() {
         {/* Name */}
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight"
+          className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
         >
-          Nikhil Baba Galfade
+          Nikhil Galfade
         </motion.h1>
 
         {/* Typewriter Effect */}
@@ -54,10 +54,10 @@ function Hero() {
             options={{
               strings: [
                 "Java Full Stack Developer",
-                "Spring Boot",
+                "Spring Boot Developer",
                 "React Developer",
-                "PostgreSQL",
-                "Tailwind CSS",
+                "PostgreSQL Developer",
+                "Python Developer",
               ],
               autoStart: true,
               loop: true,

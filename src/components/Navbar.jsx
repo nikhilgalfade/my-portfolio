@@ -52,15 +52,15 @@ function Navbar() {
   const menuItems = ["Home", "about", "projects", "contact"];
 
   return ( 
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md text-white px-8 md:px-32 py-4 flex justify-between items-center border-b border-white/20 shadow-md">
-      {/* ✅ Logo with Edwardian Script ITC Font */}
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md text-white px-4 md:px-32 py-4 flex justify-between items-center border-b border-white/20 shadow-md">
+      {/* Logo with Edwardian Script ITC Font - Always top left */}
       <Link 
         to="/" 
         onClick={handleHomeClick}
-        className="cursor-pointer"
+        className="cursor-pointer flex-shrink-0"
       >
         <h1 
-          className="text-3xl md:text-4xl font-normal text-purple-400 hover:text-purple-300 transition-colors duration-300" 
+          className="text-2xl md:text-4xl font-normal text-purple-400 hover:text-purple-300 transition-colors duration-300" 
           style={{fontFamily: "'Edwardian Script ITC', cursive"}}
         >
           Nikhil Galfade
@@ -114,9 +114,9 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Resume Button - Positioned outside the menu */}
+      {/* Mobile Menu - Right side with resume and hamburger */}
       <div className="md:hidden flex items-center gap-4">
-        {/* Resume Download Button (Mobile) - Outside menu */}
+        {/* Resume Download Button (Mobile) */}
         <button 
           onClick={handleResumeDownload}
           className="relative group border border-purple-400 text-purple-400 hover:bg-purple-400/10 px-3 py-2 rounded-lg flex items-center gap-2 transition-all duration-300"
@@ -137,12 +137,12 @@ function Navbar() {
 
       {/* Mobile Dropdown */} 
       {menuOpen && ( 
-        <div className="absolute top-16 right-4 bg-black/80 text-white rounded-lg shadow-lg flex flex-col space-y-4 p-6 md:hidden"> 
+        <div className="absolute top-full left-0 w-full bg-black/95 text-white flex flex-col space-y-4 p-6 md:hidden backdrop-blur-lg"> 
           {menuItems.map((item) => ( 
             <button 
               key={item} 
               onClick={() => scrollToSection(item)} 
-              className={`relative group ${ 
+              className={`relative group text-left py-2 ${ 
                 active === item ? "text-purple-400" : "text-white" 
               }`} 
             > 

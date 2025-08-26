@@ -1,19 +1,18 @@
 .social-3d {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  font-size: 20px;
-  color: white;
-  background: #1a1a1a;
+  background: #222; /* background of icon */
+  padding: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-30deg) skew(25deg);
-  transition: all 0.3s ease;
-  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.social-3d:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* normal shadow */
+}
+
 
 .social-3d::before,
 .social-3d::after {
@@ -45,3 +44,18 @@
   background: linear-gradient(135deg, #9333ea, #a855f7);
   color: white;
 }
+.footer-fade {
+  animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

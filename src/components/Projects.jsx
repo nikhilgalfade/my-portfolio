@@ -45,7 +45,7 @@ function Projects() {
       image: "/images/food-tracker.png",
       year: "2024",
       link: "#",
-      source: "#",
+      source: "https://github.com/nikhilgalfade/FoodCaloriesRecognition",
     },
   ];
 
